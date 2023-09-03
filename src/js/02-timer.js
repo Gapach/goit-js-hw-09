@@ -77,12 +77,16 @@ function startTimer() {
     renderDate(formatDate);
   }
 }
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
+
 
 function renderDate(formatDate) {
-  secondsRef.textContent = formatDate.seconds;
-  minutesRef.textContent = formatDate.minutes;
-  hoursRef.textContent = formatDate.hours;
-  daysRef.textContent = formatDate.days;
+  secondsRef.textContent = addLeadingZero(formatDate.seconds);
+  minutesRef.textContent = addLeadingZero(formatDate.minutes);
+  hoursRef.textContent = addLeadingZero(formatDate.hours);
+  daysRef.textContent = addLeadingZero(formatDate.days);
 }
 
 function convertMs(ms) {
